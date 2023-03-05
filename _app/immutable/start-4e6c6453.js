@@ -902,14 +902,15 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 const matchers = {};
 const nodes = [
   () => __vitePreload(() => import("./chunks/0-21d8e7f3.js"), true ? ["./chunks\\0-21d8e7f3.js","./chunks\\_layout-9a8b0c19.js","./components\\layout.svelte-e24b3401.js","./chunks\\index-e98e3991.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/1-09e46998.js"), true ? ["./chunks\\1-09e46998.js","./components\\error.svelte-e46df029.js","./chunks\\index-e98e3991.js","./chunks\\stores-86e64d94.js","./chunks\\singletons-d2459153.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/2-b801aa60.js"), true ? ["./chunks\\2-b801aa60.js","./components\\pages\\_slug_\\_error.svelte-dde3a40c.js","./chunks\\index-e98e3991.js","./chunks\\stores-86e64d94.js","./chunks\\singletons-d2459153.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/3-ecdc1384.js"), true ? ["./chunks\\3-ecdc1384.js","./components\\pages\\_page.svelte-11535f21.js","./chunks\\index-e98e3991.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/4-304f5263.js"), true ? ["./chunks\\4-304f5263.js","./components\\pages\\about\\_page.svelte-f13c8c37.js","./chunks\\index-e98e3991.js"] : void 0, import.meta.url)
+  () => __vitePreload(() => import("./chunks/1-c5dfd804.js"), true ? ["./chunks\\1-c5dfd804.js","./components\\error.svelte-6f1be22a.js","./chunks\\index-e98e3991.js","./chunks\\singletons-d2459153.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/2-ecdc1384.js"), true ? ["./chunks\\2-ecdc1384.js","./components\\pages\\_page.svelte-11535f21.js","./chunks\\index-e98e3991.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/3-2a253103.js"), true ? ["./chunks\\3-2a253103.js","./components\\pages\\404\\_page.svelte-18c14827.js","./chunks\\index-e98e3991.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/4-58673bbe.js"), true ? ["./chunks\\4-58673bbe.js","./components\\pages\\about\\_page.svelte-f98cc97f.js","./chunks\\index-e98e3991.js","./assets\\_page-4b562e34.css"] : void 0, import.meta.url)
 ];
 const server_loads = [];
 const dictionary = {
-  "/": [3],
+  "/": [2],
+  "/404": [3],
   "/about": [4]
 };
 const hooks = {
