@@ -1,5 +1,5 @@
 import { C as noop, s as safe_not_equal } from "./index-e98e3991.js";
-import { a as assets } from "./paths-dc63a7f9.js";
+import { a as assets } from "./paths-69ad0af0.js";
 const subscriber_queue = [];
 function writable(value, start = noop) {
   let stop;

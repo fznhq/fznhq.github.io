@@ -1,4 +1,4 @@
-const base = "/sveltekit-gh-pages";
+const base = "";
 let assets = base;
 function set_assets(path) {
   assets = path;
