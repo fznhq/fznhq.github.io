@@ -3,10 +3,16 @@ import { p as page } from "../../chunks/stores-4ba565bd.js";
 function create_fragment(ctx) {
   let t0_value = (
     /*$page*/
-    ctx[0].route.id + ""
+    ctx[0].url.pathname + ""
   );
   let t0;
   let t1;
+  let t2_value = (
+    /*$page*/
+    ctx[0].route.id + ""
+  );
+  let t2;
+  let t3;
   let current;
   const default_slot_template = (
     /*#slots*/
@@ -23,18 +29,24 @@ function create_fragment(ctx) {
     c() {
       t0 = text(t0_value);
       t1 = space();
+      t2 = text(t2_value);
+      t3 = space();
       if (default_slot)
         default_slot.c();
     },
     l(nodes) {
       t0 = claim_text(nodes, t0_value);
       t1 = claim_space(nodes);
+      t2 = claim_text(nodes, t2_value);
+      t3 = claim_space(nodes);
       if (default_slot)
         default_slot.l(nodes);
     },
     m(target, anchor) {
       insert_hydration(target, t0, anchor);
       insert_hydration(target, t1, anchor);
+      insert_hydration(target, t2, anchor);
+      insert_hydration(target, t3, anchor);
       if (default_slot) {
         default_slot.m(target, anchor);
       }
@@ -43,8 +55,12 @@ function create_fragment(ctx) {
     p(ctx2, [dirty]) {
       if ((!current || dirty & /*$page*/
       1) && t0_value !== (t0_value = /*$page*/
-      ctx2[0].route.id + ""))
+      ctx2[0].url.pathname + ""))
         set_data(t0, t0_value);
+      if ((!current || dirty & /*$page*/
+      1) && t2_value !== (t2_value = /*$page*/
+      ctx2[0].route.id + ""))
+        set_data(t2, t2_value);
       if (default_slot) {
         if (default_slot.p && (!current || dirty & /*$$scope*/
         2)) {
@@ -84,6 +100,10 @@ function create_fragment(ctx) {
         detach(t0);
       if (detaching)
         detach(t1);
+      if (detaching)
+        detach(t2);
+      if (detaching)
+        detach(t3);
       if (default_slot)
         default_slot.d(detaching);
     }
