@@ -1,5 +1,14 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, D as create_slot, q as text, a as space, r as claim_text, c as claim_space, b as insert_hydration, u as set_data, E as update_slot_base, F as get_all_dirty_from_scope, G as get_slot_changes, f as transition_in, t as transition_out, h as detach, H as component_subscribe } from "../../chunks/index-998ba592.js";
-import { p as page } from "../../chunks/stores-4ba565bd.js";
+import { p as page } from "../../chunks/stores-4454ebb5.js";
+import { j as client } from "../../chunks/singletons-8f3027e7.js";
+client.disable_scroll_handling;
+const goto = client.goto;
+client.invalidate;
+client.invalidateAll;
+client.preload_data;
+client.preload_code;
+client.before_navigate;
+client.after_navigate;
 function create_fragment(ctx) {
   let t0_value = (
     /*$page*/
@@ -116,6 +125,14 @@ function instance($$self, $$props, $$invalidate) {
   $$self.$$set = ($$props2) => {
     if ("$$scope" in $$props2)
       $$invalidate(1, $$scope = $$props2.$$scope);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & /*$page*/
+    1) {
+      if ($page.url.pathname.includes(".html")) {
+        goto($page.url.pathname.replace(".html", ""), { replaceState: true });
+      }
+    }
   };
   return [$page, $$scope, slots];
 }
