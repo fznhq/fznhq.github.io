@@ -1,6 +1,6 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, D as create_slot, q as text, a as space, r as claim_text, c as claim_space, b as insert_hydration, u as set_data, E as update_slot_base, F as get_all_dirty_from_scope, G as get_slot_changes, f as transition_in, t as transition_out, h as detach, H as component_subscribe } from "../../chunks/index-998ba592.js";
-import { p as page } from "../../chunks/stores-4454ebb5.js";
-import { j as client } from "../../chunks/singletons-8f3027e7.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, e as empty, b as insert_hydration, f as transition_in, t as transition_out, d as check_outros, h as detach, D as component_subscribe, E as create_slot, q as text, a as space, r as claim_text, c as claim_space, u as set_data, F as update_slot_base, G as get_all_dirty_from_scope, H as get_slot_changes, g as group_outros } from "../../chunks/index-dc20fbb7.js";
+import { p as page } from "../../chunks/stores-f65b2bb4.js";
+import { j as client } from "../../chunks/singletons-7965ec75.js";
 client.disable_scroll_handling;
 const goto = client.goto;
 client.invalidate;
@@ -9,7 +9,7 @@ client.preload_data;
 client.preload_code;
 client.before_navigate;
 client.after_navigate;
-function create_fragment(ctx) {
+function create_if_block(ctx) {
   let t0_value = (
     /*$page*/
     ctx[0].url.pathname + ""
@@ -61,7 +61,7 @@ function create_fragment(ctx) {
       }
       current = true;
     },
-    p(ctx2, [dirty]) {
+    p(ctx2, dirty) {
       if ((!current || dirty & /*$page*/
       1) && t0_value !== (t0_value = /*$page*/
       ctx2[0].url.pathname + ""))
@@ -115,6 +115,73 @@ function create_fragment(ctx) {
         detach(t3);
       if (default_slot)
         default_slot.d(detaching);
+    }
+  };
+}
+function create_fragment(ctx) {
+  let show_if = !/*$page*/
+  ctx[0].url.pathname.includes(".html");
+  let if_block_anchor;
+  let current;
+  let if_block = show_if && create_if_block(ctx);
+  return {
+    c() {
+      if (if_block)
+        if_block.c();
+      if_block_anchor = empty();
+    },
+    l(nodes) {
+      if (if_block)
+        if_block.l(nodes);
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*$page*/
+      1)
+        show_if = !/*$page*/
+        ctx2[0].url.pathname.includes(".html");
+      if (show_if) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+          if (dirty & /*$page*/
+          1) {
+            transition_in(if_block, 1);
+          }
+        } else {
+          if_block = create_if_block(ctx2);
+          if_block.c();
+          transition_in(if_block, 1);
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        }
+      } else if (if_block) {
+        group_outros();
+        transition_out(if_block, 1, 1, () => {
+          if_block = null;
+        });
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (if_block)
+        if_block.d(detaching);
+      if (detaching)
+        detach(if_block_anchor);
     }
   };
 }

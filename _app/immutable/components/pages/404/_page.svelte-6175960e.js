@@ -1,5 +1,5 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, q as text, a as space, k as element, r as claim_text, c as claim_space, l as claim_element, m as children, h as detach, n as attr, b as insert_hydration, I as append_hydration, u as set_data, C as noop, H as component_subscribe } from "../../../chunks/index-998ba592.js";
-import { p as page } from "../../../chunks/stores-4454ebb5.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, q as text, a as space, k as element, r as claim_text, c as claim_space, l as claim_element, m as children, h as detach, n as attr, b as insert_hydration, I as append_hydration, u as set_data, C as noop, D as component_subscribe } from "../../../chunks/index-dc20fbb7.js";
+import { p as page } from "../../../chunks/stores-f65b2bb4.js";
 function create_fragment(ctx) {
   let t0_value = (
     /*$page*/
