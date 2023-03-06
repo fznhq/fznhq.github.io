@@ -15,6 +15,9 @@ function create_fragment(ctx) {
   let t7;
   let a1;
   let t8;
+  let t9;
+  let a2;
+  let t10;
   return {
     c() {
       h1 = element("h1");
@@ -31,6 +34,9 @@ function create_fragment(ctx) {
       t7 = space();
       a1 = element("a");
       t8 = text("About");
+      t9 = space();
+      a2 = element("a");
+      t10 = text("??");
       this.h();
     },
     l(nodes) {
@@ -58,11 +64,17 @@ function create_fragment(ctx) {
       var a1_nodes = children(a1);
       t8 = claim_text(a1_nodes, "About");
       a1_nodes.forEach(detach);
+      t9 = claim_space(nodes);
+      a2 = claim_element(nodes, "A", { href: true });
+      var a2_nodes = children(a2);
+      t10 = claim_text(a2_nodes, "??");
+      a2_nodes.forEach(detach);
       this.h();
     },
     h() {
       attr(a0, "href", "https://kit.svelte.dev");
       attr(a1, "href", base + "/about");
+      attr(a2, "href", "404");
     },
     m(target, anchor) {
       insert_hydration(target, h1, anchor);
@@ -79,6 +91,9 @@ function create_fragment(ctx) {
       insert_hydration(target, t7, anchor);
       insert_hydration(target, a1, anchor);
       append_hydration(a1, t8);
+      insert_hydration(target, t9, anchor);
+      insert_hydration(target, a2, anchor);
+      append_hydration(a2, t10);
     },
     p: noop,
     i: noop,
@@ -98,6 +113,10 @@ function create_fragment(ctx) {
         detach(t7);
       if (detaching)
         detach(a1);
+      if (detaching)
+        detach(t9);
+      if (detaching)
+        detach(a2);
     }
   };
 }

@@ -902,9 +902,9 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 const matchers = {};
 const nodes = [
   () => __vitePreload(() => import("./chunks/0-21d8e7f3.js"), true ? ["./chunks\\0-21d8e7f3.js","./chunks\\_layout-9a8b0c19.js","./components\\layout.svelte-e24b3401.js","./chunks\\index-e98e3991.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/1-c5dfd804.js"), true ? ["./chunks\\1-c5dfd804.js","./components\\error.svelte-6f1be22a.js","./chunks\\index-e98e3991.js","./chunks\\singletons-d2459153.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/2-ecdc1384.js"), true ? ["./chunks\\2-ecdc1384.js","./components\\pages\\_page.svelte-11535f21.js","./chunks\\index-e98e3991.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/3-799256c0.js"), true ? ["./chunks\\3-799256c0.js","./components\\pages\\404\\_page.svelte-7ee196c2.js","./chunks\\index-e98e3991.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/1-09e46998.js"), true ? ["./chunks\\1-09e46998.js","./components\\error.svelte-e46df029.js","./chunks\\index-e98e3991.js","./chunks\\stores-86e64d94.js","./chunks\\singletons-d2459153.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/2-c746ae01.js"), true ? ["./chunks\\2-c746ae01.js","./components\\pages\\_page.svelte-670d1073.js","./chunks\\index-e98e3991.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/3-3a4e8032.js"), true ? ["./chunks\\3-3a4e8032.js","./components\\pages\\404\\_page.svelte-64c8a8ed.js","./chunks\\index-e98e3991.js","./chunks\\stores-86e64d94.js","./chunks\\singletons-d2459153.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/4-58673bbe.js"), true ? ["./chunks\\4-58673bbe.js","./components\\pages\\about\\_page.svelte-f98cc97f.js","./chunks\\index-e98e3991.js","./assets\\_page-4b562e34.css"] : void 0, import.meta.url)
 ];
 const server_loads = [];
