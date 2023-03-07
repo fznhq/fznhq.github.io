@@ -1,5 +1,5 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, e as empty, c as claim_space, b as insert_hydration, g as group_outros, t as transition_out, d as check_outros, f as transition_in, h as detach, j as afterUpdate, o as onMount, k as element, l as claim_element, m as children, n as attr, p as set_style, q as text, r as claim_text, u as set_data, v as binding_callbacks, w as construct_svelte_component, x as create_component, y as claim_component, z as mount_component, A as destroy_component, B as tick } from "./chunks/index-dc20fbb7.js";
-import { S as SCROLL_KEY, a as SNAPSHOT_KEY, I as INDEX_KEY, g as get_base_uri, f as find_anchor, b as get_link_info, c as get_router_options, s as stores, i as is_external_url, d as scroll_state, P as PRELOAD_PRIORITIES, e as init$1, h as set_version } from "./chunks/singletons-7965ec75.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, e as empty, c as claim_space, b as insert_hydration, g as group_outros, t as transition_out, d as check_outros, f as transition_in, h as detach, j as afterUpdate, o as onMount, k as element, l as claim_element, m as children, n as attr, p as set_style, q as text, r as claim_text, u as set_data, v as binding_callbacks, w as construct_svelte_component, x as create_component, y as claim_component, z as mount_component, A as destroy_component, B as tick } from "./chunks/index-e98e3991.js";
+import { S as SCROLL_KEY, a as SNAPSHOT_KEY, I as INDEX_KEY, g as get_base_uri, f as find_anchor, b as get_link_info, c as get_router_options, s as stores, i as is_external_url, d as scroll_state, P as PRELOAD_PRIORITIES, e as init$1, h as set_version } from "./chunks/singletons-3557e383.js";
 import { b as base, s as set_assets } from "./chunks/paths-69ad0af0.js";
 function normalize_path(path, trailing_slash) {
   if (path === "/" || trailing_slash === "ignore")
@@ -270,7 +270,7 @@ function parse(nodes2, server_loads2, dictionary2, matchers2) {
     return id === void 0 ? id : [layouts_with_server_load.has(id), nodes2[id]];
   }
 }
-function create_else_block(ctx) {
+function create_else_block_1(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -293,7 +293,7 @@ function create_else_block(ctx) {
   }
   if (switch_value) {
     switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-    ctx[12](switch_instance);
+    ctx[15](switch_instance);
   }
   return {
     c() {
@@ -324,6 +324,290 @@ function create_else_block(ctx) {
         ctx2[2];
       if (switch_value !== (switch_value = /*constructors*/
       ctx2[1][0])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          ctx2[15](switch_instance);
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      if (switch_instance)
+        transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance)
+        transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      ctx[15](null);
+      if (detaching)
+        detach(switch_instance_anchor);
+      if (switch_instance)
+        destroy_component(switch_instance, detaching);
+    }
+  };
+}
+function create_if_block_2(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  var switch_value = (
+    /*constructors*/
+    ctx[1][0]
+  );
+  function switch_props(ctx2) {
+    let switch_instance_props = {
+      data: (
+        /*data_0*/
+        ctx2[3]
+      ),
+      $$slots: { default: [create_default_slot] },
+      $$scope: { ctx: ctx2 }
+    };
+    return { props: switch_instance_props };
+  }
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+    ctx[14](switch_instance);
+  }
+  return {
+    c() {
+      if (switch_instance)
+        create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    l(nodes2) {
+      if (switch_instance)
+        claim_component(switch_instance.$$.fragment, nodes2);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance)
+        mount_component(switch_instance, target, anchor);
+      insert_hydration(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const switch_instance_changes = {};
+      if (dirty & /*data_0*/
+      8)
+        switch_instance_changes.data = /*data_0*/
+        ctx2[3];
+      if (dirty & /*$$scope, constructors, data_1, components, data_2, form*/
+      65591) {
+        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (switch_value !== (switch_value = /*constructors*/
+      ctx2[1][0])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          ctx2[14](switch_instance);
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      if (switch_instance)
+        transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance)
+        transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      ctx[14](null);
+      if (detaching)
+        detach(switch_instance_anchor);
+      if (switch_instance)
+        destroy_component(switch_instance, detaching);
+    }
+  };
+}
+function create_else_block(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  var switch_value = (
+    /*constructors*/
+    ctx[1][1]
+  );
+  function switch_props(ctx2) {
+    let switch_instance_props = {
+      data: (
+        /*data_1*/
+        ctx2[4]
+      ),
+      form: (
+        /*form*/
+        ctx2[2]
+      )
+    };
+    return { props: switch_instance_props };
+  }
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+    ctx[13](switch_instance);
+  }
+  return {
+    c() {
+      if (switch_instance)
+        create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    l(nodes2) {
+      if (switch_instance)
+        claim_component(switch_instance.$$.fragment, nodes2);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance)
+        mount_component(switch_instance, target, anchor);
+      insert_hydration(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const switch_instance_changes = {};
+      if (dirty & /*data_1*/
+      16)
+        switch_instance_changes.data = /*data_1*/
+        ctx2[4];
+      if (dirty & /*form*/
+      4)
+        switch_instance_changes.form = /*form*/
+        ctx2[2];
+      if (switch_value !== (switch_value = /*constructors*/
+      ctx2[1][1])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          ctx2[13](switch_instance);
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      if (switch_instance)
+        transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance)
+        transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      ctx[13](null);
+      if (detaching)
+        detach(switch_instance_anchor);
+      if (switch_instance)
+        destroy_component(switch_instance, detaching);
+    }
+  };
+}
+function create_if_block_3(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  var switch_value = (
+    /*constructors*/
+    ctx[1][1]
+  );
+  function switch_props(ctx2) {
+    let switch_instance_props = {
+      data: (
+        /*data_1*/
+        ctx2[4]
+      ),
+      $$slots: { default: [create_default_slot_1] },
+      $$scope: { ctx: ctx2 }
+    };
+    return { props: switch_instance_props };
+  }
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+    ctx[12](switch_instance);
+  }
+  return {
+    c() {
+      if (switch_instance)
+        create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    l(nodes2) {
+      if (switch_instance)
+        claim_component(switch_instance.$$.fragment, nodes2);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance)
+        mount_component(switch_instance, target, anchor);
+      insert_hydration(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const switch_instance_changes = {};
+      if (dirty & /*data_1*/
+      16)
+        switch_instance_changes.data = /*data_1*/
+        ctx2[4];
+      if (dirty & /*$$scope, constructors, data_2, form, components*/
+      65575) {
+        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (switch_value !== (switch_value = /*constructors*/
+      ctx2[1][1])) {
         if (switch_instance) {
           group_outros();
           const old_component = switch_instance;
@@ -366,22 +650,24 @@ function create_else_block(ctx) {
     }
   };
 }
-function create_if_block_2(ctx) {
+function create_default_slot_1(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
   var switch_value = (
     /*constructors*/
-    ctx[1][0]
+    ctx[1][2]
   );
   function switch_props(ctx2) {
     let switch_instance_props = {
       data: (
-        /*data_0*/
-        ctx2[3]
+        /*data_2*/
+        ctx2[5]
       ),
-      $$slots: { default: [create_default_slot] },
-      $$scope: { ctx: ctx2 }
+      form: (
+        /*form*/
+        ctx2[2]
+      )
     };
     return { props: switch_instance_props };
   }
@@ -408,16 +694,16 @@ function create_if_block_2(ctx) {
     },
     p(ctx2, dirty) {
       const switch_instance_changes = {};
-      if (dirty & /*data_0*/
-      8)
-        switch_instance_changes.data = /*data_0*/
-        ctx2[3];
-      if (dirty & /*$$scope, constructors, data_1, form, components*/
-      8215) {
-        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
-      }
+      if (dirty & /*data_2*/
+      32)
+        switch_instance_changes.data = /*data_2*/
+        ctx2[5];
+      if (dirty & /*form*/
+      4)
+        switch_instance_changes.form = /*form*/
+        ctx2[2];
       if (switch_value !== (switch_value = /*constructors*/
-      ctx2[1][0])) {
+      ctx2[1][2])) {
         if (switch_instance) {
           group_outros();
           const old_component = switch_instance;
@@ -461,98 +747,72 @@ function create_if_block_2(ctx) {
   };
 }
 function create_default_slot(ctx) {
-  let switch_instance;
-  let switch_instance_anchor;
+  let current_block_type_index;
+  let if_block;
+  let if_block_anchor;
   let current;
-  var switch_value = (
-    /*constructors*/
-    ctx[1][1]
-  );
-  function switch_props(ctx2) {
-    let switch_instance_props = {
-      data: (
-        /*data_1*/
-        ctx2[4]
-      ),
-      form: (
-        /*form*/
-        ctx2[2]
-      )
-    };
-    return { props: switch_instance_props };
+  const if_block_creators = [create_if_block_3, create_else_block];
+  const if_blocks = [];
+  function select_block_type_1(ctx2, dirty) {
+    if (
+      /*constructors*/
+      ctx2[1][2]
+    )
+      return 0;
+    return 1;
   }
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-    ctx[10](switch_instance);
-  }
+  current_block_type_index = select_block_type_1(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
   return {
     c() {
-      if (switch_instance)
-        create_component(switch_instance.$$.fragment);
-      switch_instance_anchor = empty();
+      if_block.c();
+      if_block_anchor = empty();
     },
     l(nodes2) {
-      if (switch_instance)
-        claim_component(switch_instance.$$.fragment, nodes2);
-      switch_instance_anchor = empty();
+      if_block.l(nodes2);
+      if_block_anchor = empty();
     },
     m(target, anchor) {
-      if (switch_instance)
-        mount_component(switch_instance, target, anchor);
-      insert_hydration(target, switch_instance_anchor, anchor);
+      if_blocks[current_block_type_index].m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
       current = true;
     },
     p(ctx2, dirty) {
-      const switch_instance_changes = {};
-      if (dirty & /*data_1*/
-      16)
-        switch_instance_changes.data = /*data_1*/
-        ctx2[4];
-      if (dirty & /*form*/
-      4)
-        switch_instance_changes.form = /*form*/
-        ctx2[2];
-      if (switch_value !== (switch_value = /*constructors*/
-      ctx2[1][1])) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
-          ctx2[10](switch_instance);
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type_1(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
         } else {
-          switch_instance = null;
+          if_block.p(ctx2, dirty);
         }
-      } else if (switch_value) {
-        switch_instance.$set(switch_instance_changes);
+        transition_in(if_block, 1);
+        if_block.m(if_block_anchor.parentNode, if_block_anchor);
       }
     },
     i(local) {
       if (current)
         return;
-      if (switch_instance)
-        transition_in(switch_instance.$$.fragment, local);
+      transition_in(if_block);
       current = true;
     },
     o(local) {
-      if (switch_instance)
-        transition_out(switch_instance.$$.fragment, local);
+      transition_out(if_block);
       current = false;
     },
     d(detaching) {
-      ctx[10](null);
+      if_blocks[current_block_type_index].d(detaching);
       if (detaching)
-        detach(switch_instance_anchor);
-      if (switch_instance)
-        destroy_component(switch_instance, detaching);
+        detach(if_block_anchor);
     }
   };
 }
@@ -560,7 +820,7 @@ function create_if_block(ctx) {
   let div;
   let if_block = (
     /*navigated*/
-    ctx[6] && create_if_block_1(ctx)
+    ctx[7] && create_if_block_1(ctx)
   );
   return {
     c() {
@@ -604,7 +864,7 @@ function create_if_block(ctx) {
     p(ctx2, dirty) {
       if (
         /*navigated*/
-        ctx2[6]
+        ctx2[7]
       ) {
         if (if_block) {
           if_block.p(ctx2, dirty);
@@ -632,14 +892,14 @@ function create_if_block_1(ctx) {
     c() {
       t = text(
         /*title*/
-        ctx[7]
+        ctx[8]
       );
     },
     l(nodes2) {
       t = claim_text(
         nodes2,
         /*title*/
-        ctx[7]
+        ctx[8]
       );
     },
     m(target, anchor) {
@@ -647,11 +907,11 @@ function create_if_block_1(ctx) {
     },
     p(ctx2, dirty) {
       if (dirty & /*title*/
-      128)
+      256)
         set_data(
           t,
           /*title*/
-          ctx2[7]
+          ctx2[8]
         );
     },
     d(detaching) {
@@ -666,7 +926,7 @@ function create_fragment(ctx) {
   let t;
   let if_block1_anchor;
   let current;
-  const if_block_creators = [create_if_block_2, create_else_block];
+  const if_block_creators = [create_if_block_2, create_else_block_1];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -680,7 +940,7 @@ function create_fragment(ctx) {
   if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
   let if_block1 = (
     /*mounted*/
-    ctx[5] && create_if_block(ctx)
+    ctx[6] && create_if_block(ctx)
   );
   return {
     c() {
@@ -728,7 +988,7 @@ function create_fragment(ctx) {
       }
       if (
         /*mounted*/
-        ctx2[5]
+        ctx2[6]
       ) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
@@ -771,6 +1031,7 @@ function instance($$self, $$props, $$invalidate) {
   let { form } = $$props;
   let { data_0 = null } = $$props;
   let { data_1 = null } = $$props;
+  let { data_2 = null } = $$props;
   afterUpdate(stores2.page.notify);
   let mounted = false;
   let navigated = false;
@@ -778,26 +1039,38 @@ function instance($$self, $$props, $$invalidate) {
   onMount(() => {
     const unsubscribe = stores2.page.subscribe(() => {
       if (mounted) {
-        $$invalidate(6, navigated = true);
-        $$invalidate(7, title = document.title || "untitled page");
+        $$invalidate(7, navigated = true);
+        $$invalidate(8, title = document.title || "untitled page");
       }
     });
-    $$invalidate(5, mounted = true);
+    $$invalidate(6, mounted = true);
     return unsubscribe;
   });
   function switch_instance_binding($$value) {
     binding_callbacks[$$value ? "unshift" : "push"](() => {
-      components[1] = $$value;
+      components[2] = $$value;
       $$invalidate(0, components);
     });
   }
   function switch_instance_binding_1($$value) {
     binding_callbacks[$$value ? "unshift" : "push"](() => {
-      components[0] = $$value;
+      components[1] = $$value;
       $$invalidate(0, components);
     });
   }
   function switch_instance_binding_2($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      components[1] = $$value;
+      $$invalidate(0, components);
+    });
+  }
+  function switch_instance_binding_3($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      components[0] = $$value;
+      $$invalidate(0, components);
+    });
+  }
+  function switch_instance_binding_4($$value) {
     binding_callbacks[$$value ? "unshift" : "push"](() => {
       components[0] = $$value;
       $$invalidate(0, components);
@@ -805,9 +1078,9 @@ function instance($$self, $$props, $$invalidate) {
   }
   $$self.$$set = ($$props2) => {
     if ("stores" in $$props2)
-      $$invalidate(8, stores2 = $$props2.stores);
+      $$invalidate(9, stores2 = $$props2.stores);
     if ("page" in $$props2)
-      $$invalidate(9, page = $$props2.page);
+      $$invalidate(10, page = $$props2.page);
     if ("constructors" in $$props2)
       $$invalidate(1, constructors = $$props2.constructors);
     if ("components" in $$props2)
@@ -818,10 +1091,12 @@ function instance($$self, $$props, $$invalidate) {
       $$invalidate(3, data_0 = $$props2.data_0);
     if ("data_1" in $$props2)
       $$invalidate(4, data_1 = $$props2.data_1);
+    if ("data_2" in $$props2)
+      $$invalidate(5, data_2 = $$props2.data_2);
   };
   $$self.$$.update = () => {
     if ($$self.$$.dirty & /*stores, page*/
-    768) {
+    1536) {
       stores2.page.set(page);
     }
   };
@@ -831,6 +1106,7 @@ function instance($$self, $$props, $$invalidate) {
     form,
     data_0,
     data_1,
+    data_2,
     mounted,
     navigated,
     title,
@@ -838,20 +1114,23 @@ function instance($$self, $$props, $$invalidate) {
     page,
     switch_instance_binding,
     switch_instance_binding_1,
-    switch_instance_binding_2
+    switch_instance_binding_2,
+    switch_instance_binding_3,
+    switch_instance_binding_4
   ];
 }
 class Root extends SvelteComponent {
   constructor(options) {
     super();
     init(this, options, instance, create_fragment, safe_not_equal, {
-      stores: 8,
-      page: 9,
+      stores: 9,
+      page: 10,
       constructors: 1,
       components: 0,
       form: 2,
       data_0: 3,
-      data_1: 4
+      data_1: 4,
+      data_2: 5
     });
   }
 }
@@ -901,17 +1180,18 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 };
 const matchers = {};
 const nodes = [
-  () => __vitePreload(() => import("./chunks/0-ddccd087.js"), true ? ["./chunks\\0-ddccd087.js","./chunks\\_layout-9a8b0c19.js","./components\\pages\\_layout.svelte-077c52e1.js","./chunks\\index-dc20fbb7.js","./chunks\\stores-f65b2bb4.js","./chunks\\singletons-7965ec75.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/1-eeddd09b.js"), true ? ["./chunks\\1-eeddd09b.js","./components\\error.svelte-f462087d.js","./chunks\\index-dc20fbb7.js","./chunks\\stores-f65b2bb4.js","./chunks\\singletons-7965ec75.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/2-de305a51.js"), true ? ["./chunks\\2-de305a51.js","./components\\pages\\_page.svelte-eb7a10fe.js","./chunks\\index-dc20fbb7.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/3-a64173ec.js"), true ? ["./chunks\\3-a64173ec.js","./components\\pages\\404\\_page.svelte-6175960e.js","./chunks\\index-dc20fbb7.js","./chunks\\stores-f65b2bb4.js","./chunks\\singletons-7965ec75.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/4-12254de0.js"), true ? ["./chunks\\4-12254de0.js","./components\\pages\\about\\_page.svelte-1e2c70cc.js","./chunks\\index-dc20fbb7.js","./assets\\_page-4b562e34.css"] : void 0, import.meta.url)
+  () => __vitePreload(() => import("./chunks/0-21d8e7f3.js"), true ? ["./chunks\\0-21d8e7f3.js","./chunks\\_layout-9a8b0c19.js","./components\\layout.svelte-e24b3401.js","./chunks\\index-e98e3991.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/1-aa8ae85d.js"), true ? ["./chunks\\1-aa8ae85d.js","./components\\error.svelte-b9ff9917.js","./chunks\\index-e98e3991.js","./chunks\\stores-519e4a96.js","./chunks\\singletons-3557e383.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/2-2b042e24.js"), true ? ["./chunks\\2-2b042e24.js","./components\\pages\\(blog)\\_layout.svelte-ad406375.js","./chunks\\index-e98e3991.js","./chunks\\stores-519e4a96.js","./chunks\\singletons-3557e383.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/3-3c98afae.js"), true ? ["./chunks\\3-3c98afae.js","./components\\pages\\(blog)\\_page.svelte-1be806fe.js","./chunks\\index-e98e3991.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/4-7be09454.js"), true ? ["./chunks\\4-7be09454.js","./components\\pages\\(blog)\\about\\_page.svelte-2a465dfe.js","./chunks\\index-e98e3991.js","./assets\\_page-4b562e34.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/5-f2ab81fa.js"), true ? ["./chunks\\5-f2ab81fa.js","./components\\pages\\(errors)\\404\\_page.svelte-86dab240.js","./chunks\\index-e98e3991.js","./chunks\\stores-519e4a96.js","./chunks\\singletons-3557e383.js","./chunks\\paths-69ad0af0.js"] : void 0, import.meta.url)
 ];
 const server_loads = [];
 const dictionary = {
-  "/": [2],
-  "/404": [3],
-  "/about": [4]
+  "/(blog)": [3, [2]],
+  "/(errors)/404": [5],
+  "/(blog)/about": [4, [2]]
 };
 const hooks = {
   handleError: ({ error }) => {
